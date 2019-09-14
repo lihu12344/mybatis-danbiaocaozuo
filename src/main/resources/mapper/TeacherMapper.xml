@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.TeacherMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.Teacher">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+  </resultMap>
+
+  <select id="getCount" resultType="com.example.demo.pojo.TeacherCount">
+    select age,count(*) as count from teacher group by age;
+  </select>
+
+  <select id="get" resultMap="BaseResultMap">
+    select *
+    from teacher;
+  </select>
+</mapper>

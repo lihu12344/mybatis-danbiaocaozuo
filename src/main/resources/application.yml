@@ -1,0 +1,19 @@
+mapper:
+  before: true
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 123456
+
+pagehelper:
+  offset-as-page-num: true
+  row-bounds-with-count: true
+  page-size-zero: true
+  reasonable: true
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
